@@ -133,7 +133,7 @@
 					})
 				]).then(done, done);
 			},
-			'should propogate request errors': function () {
+			'//should propogate request errors': function () {
 				// TODO follow up with Sauce Labs
 				// this test is valid, but fails with sauce as their proxy returns a 400
 				var request = { path: 'http://localhost:1234' };
