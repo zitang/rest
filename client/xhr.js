@@ -10,46 +10,13 @@
 
 	define(function (require) {
 
-		var when, UrlBuilder, normalizeHeaderName, responsePromise, client, headerSplitRE;
+		var when, UrlBuilder, parseHeaders, responsePromise, client;
 
 		when = require('when');
 		UrlBuilder = require('../UrlBuilder');
-		normalizeHeaderName = require('../util/normalizeHeaderName');
+		parseHeaders = require('../util/parseHeaders');
 		responsePromise = require('../util/responsePromise');
 		client = require('../client');
-
-		// according to the spec, the line break is '\r\n', but doesn't hold true in practice
-		headerSplitRE = /[\r|\n]+/;
-
-		function parseHeaders(raw) {
-			// Note: Set-Cookie will be removed by the browser
-			var headers = {};
-
-			if (!raw) { return headers; }
-
-			raw.trim().split(headerSplitRE).forEach(function (header) {
-				var boundary, name, value;
-				boundary = header.indexOf(':');
-				name = normalizeHeaderName(header.substring(0, boundary).trim());
-				value = header.substring(boundary + 1).trim();
-				if (headers[name]) {
-					if (Array.isArray(headers[name])) {
-						// add to an existing array
-						headers[name].push(value);
-					}
-					else {
-						// convert single value to array
-						headers[name] = [headers[name], value];
-					}
-				}
-				else {
-					// new, single value
-					headers[name] = value;
-				}
-			});
-
-			return headers;
-		}
 
 		return client(function xhr(request) {
 			return new responsePromise.ResponsePromise(function (resolve, reject) {

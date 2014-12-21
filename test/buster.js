@@ -30,6 +30,7 @@ config['rest:browser'] = {
 		'parsers/**/*.js',
 		'util/**/*.js',
 		'node_modules/curl/**/*.js',
+		'node_modules/jquery/**/*.js',
 		'node_modules/poly/**/*.js',
 		'node_modules/when/**/*.js',
 		'node_modules/wire/**/*.js',
