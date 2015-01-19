@@ -40,9 +40,12 @@
 	},
 	"devDependencies": {
 		"wire": "~0.9",
-		"test-support": "~0.4",
-		"curl": "https://github.com/cujojs/curl/tarball/0.7.3",
-		"poly": "https://github.com/cujojs/poly/tarball/0.5.1"
+		"jshint": "~2.5",
+		"mocha": "~2.1",
+		"chai": "~1.10",
+		"sinon-chai": "~2.6",
+		"curl-amd": "~0.8",
+		"serv": "~0.2"
 	},
 	"main": "./node",
 	"browser": "./browser",
@@ -51,11 +54,10 @@
 		"main": "./browser"
 	},
 	"scripts": {
-		"test": "npm run-script lint && npm run-script buster",
-		"start": "buster static -e browser",
-		"tunnel": "sauceme -m",
+		"test": "npm run-script lint && npm run-script mocha",
+		"start": "serv",
 		"lint": "jshint .",
-		"buster": "buster test --node",
-		"sauceme": "sauceme"
+		"mocha": "mocha \\*\\*/\\*.spec.js \\*\\*/\\*.spec.node.js",
+		"sauceme": "node test/sauceme.js"
 	}
 }

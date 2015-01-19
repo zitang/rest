@@ -68,11 +68,12 @@
 				}).then(function (converter) {
 					var client = config.client || request.originator;
 
-					return when.attempt(converter.write, request.entity, { client: client, request: request, mime: type, registry: config.registry })
+					return when.attempt(converter.write, request._entity || request.entity, { client: client, request: request, mime: type, registry: config.registry })
 						.otherwise(function() {
 							throw 'mime-serialization';
 						})
 						.then(function(entity) {
+							request._entity = request._entity || request.entity;
 							request.entity = entity;
 							return request;
 						});

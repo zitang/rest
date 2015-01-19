@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>rest.js Tests</title>
+</head>
+<body>
+    <div id="mocha"></div>
+    <script src="/test/curl-config.js"></script>
+    <script src="/node_modules/curl-amd/src/curl.js"></script>
+    <script>
+        curl(['mocha', 'css!mocha'], function (mocha) {
+            mocha.setup('bdd');
+        }).next(['mocha', 'rest/test/all']).then(
+            function (mocha) {
+                var runner = mocha.run();
+
+                function fullTitle(test) {
+                    if (!test) { return []; }
+                    var titles = fullTitle(test.parent);
+                    if (test.title) {
+                        titles.push(test.title)
+                    }
+                    return titles;
+                }
+
+                var reports = [];
+
+                runner.on('fail', function(test, err) {
+                    reports.push({
+                        titles: fullTitle(test),
+                        name: err.message,
+                        stack: err.stack
+                    });
+                });
+
+                runner.on('end', function() {
+                    runner.stats.reports = reports;
+                    window.mochaResults = runner.stats;
+                });
+
+            },
+            function (err) {
+                console.log('Unable to load tests:', err);
+            }
+        );
+    </script>
+</body>
+</html>
