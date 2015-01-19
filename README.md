@@ -239,6 +239,9 @@ Change Log
 2.0.0-pre
 - drop support for older browsers, most significantly non-ES5 browsers (IE <9, Safari <7, iOS <7, Opera, Node.js <0.10)
 - expand support for more environments, most significantly io.js, Node.js 0.12 and the latest version of supported browsers
+- switch test suite from Buster.js to mocha+chai (Thanks Buster it was fun)
+- switch browser testing to Sauce Labs' unit test support, and Travis' SauceConnect integration
+- prevent double encoding of an entity by the mime interceptor
 
 1.3.1
 - fix to allow numbers and boolean values as parameters to URI Template expansion.

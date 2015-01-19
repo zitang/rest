@@ -54,19 +54,20 @@
 			 * @returns converter whose read/write methods target the desired mime converter
 			 */
 			this.delegate = function delegate(type) {
+				var registry = this;
 				return {
 					read: function () {
 						var args = arguments;
-						return this.lookup(type).then(function (converter) {
-							return converter.read.apply(this, args);
-						}.bind(this));
-					}.bind(this),
+						return registry.lookup(type).then(function (converter) {
+							return converter.read.apply(registry, args);
+						});
+					},
 					write: function () {
 						var args = arguments;
-						return this.lookup(type).then(function (converter) {
-							return converter.write.apply(this, args);
-						}.bind(this));
-					}.bind(this)
+						return registry.lookup(type).then(function (converter) {
+							return converter.write.apply(registry, args);
+						});
+					}
 				};
 			};
 
