@@ -1,6 +1,8 @@
 rest.js
 =======
 
+[![Join the chat at https://gitter.im/cujojs/rest](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cujojs/rest?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Just enough client, as you need it.  Make HTTP requests from a browser or Node.js applying only the client features you need.  Configure a client once, and share it safely throughout your application.  Easily extend with interceptors that wrap the request and/or response, or MIME type converters for rich data formats.
 
 
