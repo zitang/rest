@@ -8,6 +8,13 @@ cache:
   directories:
   - node_modules
 sudo: false
+notifications:
+  webhooks:
+    urls:
+      - https://webhooks.gitter.im/e/51fa3e98edb74a7cf3fa
+    on_success: always  # options: [always|never|change] default: always
+    on_failure: change  # options: [always|never|change] default: always
+    on_start: false     # default: false
 matrix:
   include:
     - node_js: '0.10'
