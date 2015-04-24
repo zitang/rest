@@ -18,125 +18,125 @@ notifications:
 matrix:
   include:
     - node_js: '0.10'
-      script: 'npm run-script lint'
+      script: 'travis_retry npm run-script lint'
     - node_js: 'iojs-v1'
-      script: 'npm run-script mocha'
+      script: 'travis_retry npm run-script mocha'
     - node_js: '0.12'
-      script: 'npm run-script mocha'
+      script: 'travis_retry npm run-script mocha'
     - node_js: '0.10'
-      script: 'npm run-script mocha'
+      script: 'travis_retry npm run-script mocha'
     - node_js: '0.8'
-      script: 'npm run-script mocha'
+      script: 'travis_retry npm run-script mocha'
     - node_js: '0.10'
-      script: 'npm run-script sauceme'
+      script: 'travis_retry npm run-script sauceme'
       addons:
         sauce_connect: true
       env:
         - BROWSERS='[[ "Windows 2008", "chrome", "" ]]'
     - node_js: '0.10'
-      script: 'npm run-script sauceme'
+      script: 'travis_retry npm run-script sauceme'
       addons:
         sauce_connect: true
       env:
         - BROWSERS='[[ "Windows 2008", "firefox", "" ]]'
     - node_js: '0.10'
-      script: 'npm run-script sauceme'
+      script: 'travis_retry npm run-script sauceme'
       addons:
         sauce_connect: true
       env:
         - BROWSERS='[[ "Windows 2003", "firefox", "31" ]]'
     - node_js: '0.10'
-      script: 'npm run-script sauceme'
+      script: 'travis_retry npm run-script sauceme'
       addons:
         sauce_connect: true
       env:
         - BROWSERS='[[ "Windows 8.1", "internet explorer", "11" ]]'
     - node_js: '0.10'
-      script: 'npm run-script sauceme'
+      script: 'travis_retry npm run-script sauceme'
       addons:
         sauce_connect: true
       env:
         - BROWSERS='[[ "Windows 2012", "internet explorer", "10" ]]'
     - node_js: '0.10'
-      script: 'npm run-script sauceme'
+      script: 'travis_retry npm run-script sauceme'
       addons:
         sauce_connect: true
       env:
         - BROWSERS='[[ "Windows 2008", "internet explorer", "9" ]]'
     - node_js: '0.10'
-      script: 'npm run-script sauceme'
+      script: 'travis_retry npm run-script sauceme'
       addons:
         sauce_connect: true
       env:
         - BROWSERS='[[ "Mac 10.10", "safari", "8" ]]'
     - node_js: '0.10'
-      script: 'npm run-script sauceme'
+      script: 'travis_retry npm run-script sauceme'
       addons:
         sauce_connect: true
       env:
         - BROWSERS='[[ "Mac 10.9", "safari", "7" ]]'
     - node_js: '0.10'
-      script: 'npm run-script sauceme'
+      script: 'travis_retry npm run-script sauceme'
       addons:
         sauce_connect: true
       env:
         - BROWSERS='[[ "Mac 10.8", "safari", "6" ]]'
     - node_js: '0.10'
-      script: 'npm run-script sauceme'
+      script: 'travis_retry npm run-script sauceme'
       addons:
         sauce_connect: true
       env:
         - BROWSERS='[[ "Mac 10.10", "ipad", "8.2" ]]'
     - node_js: '0.10'
-      script: 'npm run-script sauceme'
+      script: 'travis_retry npm run-script sauceme'
       addons:
         sauce_connect: true
       env:
         - BROWSERS='[[ "Mac 10.9", "ipad", "7.1" ]]'
     - node_js: '0.10'
-      script: 'npm run-script sauceme'
+      script: 'travis_retry npm run-script sauceme'
       addons:
         sauce_connect: true
       env:
         - BROWSERS='[[ "Mac 10.8", "ipad", "6" ]]'
     - node_js: '0.10'
-      script: 'npm run-script sauceme'
+      script: 'travis_retry npm run-script sauceme'
       addons:
         sauce_connect: true
       env:
         - BROWSERS='[[ "Linux", "android", "5.1" ]]'
     - node_js: '0.10'
-      script: 'npm run-script sauceme'
+      script: 'travis_retry npm run-script sauceme'
       addons:
         sauce_connect: true
       env:
         - BROWSERS='[[ "Linux", "android", "5.0" ]]'
     - node_js: '0.10'
-      script: 'npm run-script sauceme'
+      script: 'travis_retry npm run-script sauceme'
       addons:
         sauce_connect: true
       env:
         - BROWSERS='[[ "Linux", "android", "4.4" ]]'
     - node_js: '0.10'
-      script: 'npm run-script sauceme'
+      script: 'travis_retry npm run-script sauceme'
       addons:
         sauce_connect: true
       env:
         - BROWSERS='[[ "Linux", "android", "4.3" ]]'
     - node_js: '0.10'
-      script: 'npm run-script sauceme'
+      script: 'travis_retry npm run-script sauceme'
       addons:
         sauce_connect: true
       env:
         - BROWSERS='[[ "Linux", "android", "4.2" ]]'
     - node_js: '0.10'
-      script: 'npm run-script sauceme'
+      script: 'travis_retry npm run-script sauceme'
       addons:
         sauce_connect: true
       env:
         - BROWSERS='[[ "Linux", "android", "4.1" ]]'
     - node_js: '0.10'
-      script: 'npm run-script sauceme'
+      script: 'travis_retry npm run-script sauceme'
       addons:
         sauce_connect: true
       env:
