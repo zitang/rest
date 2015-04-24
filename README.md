@@ -10,6 +10,7 @@ Build Status
 <table>
   <tr><td>Master</td><td><a href="http://travis-ci.org/cujojs/rest" target="_blank"><img src="https://secure.travis-ci.org/cujojs/rest.png?branch=master" /></a></tr>
   <tr><td>Development</td><td><a href="http://travis-ci.org/cujojs/rest" target="_blank"><img src="https://secure.travis-ci.org/cujojs/rest.png?branch=dev" /></a></tr>
+  <tr><td>Development 2.0</td><td><a href="http://travis-ci.org/cujojs/rest" target="_blank"><img src="https://secure.travis-ci.org/cujojs/rest.png?branch=dev20" /></a></tr>
 </table>
 
 
@@ -141,13 +142,13 @@ Our goal is to work in every major JavaScript environment; Node.js and major bro
 If your preferred environment is not supported, please let us know. Some features may not be available in all environments.
 
 Tested environments:
-- Node.js (0.6, 0.8. 0.10)
+- io.js (1.x)
+- Node.js (0.8. 0.10, 0.12)
 - Chrome (stable)
-- Firefox (stable, ESR, should work in earlier versions)
-- IE (6-11)
-- Safari (5-8, iOS 4-8.1, should work in earlier versions)
-- Android (4.0-5.0, should work in earlier versions)
-- Opera (11, 12, should work in earlier versions)
+- Firefox (stable, ESR)
+- IE (9-11)
+- Safari (6-8, iOS 6-8.2)
+- Android (4.0-5.1, should work in earlier versions)
 
 Specific browser test are provided by [Travis CI](https://travis-ci.org/cujojs/rest) and [Sauce Labs' Open Sauce Plan](https://saucelabs.com/opensource). You can see [specific browser test results](https://saucelabs.com/u/cujojs-rest), although odds are they do not reference this specific release/branch/commit.
 
@@ -175,7 +176,7 @@ From source:
 
 rest.js is designed to run in a browser environment, utilizing [AMD modules](https://github.com/amdjs/amdjs-api/wiki/AMD), or within [Node.js](http://nodejs.org/) as CommonJS modules. Any module loader capable of loading either AMD or CommonJS modules should be able to load rest.js. cujoJS [curl.js](https://github.com/cujojs/curl) is actively tested.
 
-An ECMAScript 5 compatible environment is assumed.  Older browsers, ::cough:: IE, that do not support ES5 natively can be shimmed.  Any shim should work, although we test with cujoJS [poly.js](https://github.com/cujojs/poly)
+An ECMAScript 5 compatible environment is required.
 
 
 Documentation
@@ -235,8 +236,9 @@ rest.js is made available under the MIT license.  See LICENSE.txt for details.
 Change Log
 ----------
 
-.next
-- nothing yet
+2.0.0-pre
+- drop support for older browsers, most significantly non-ES5 browsers (IE <9, Safari <7, iOS <7, Opera, Node.js <0.10)
+- expand support for more environments, most significantly io.js, Node.js 0.12 and the latest version of supported browsers
 
 1.3.1
 - fix to allow numbers and boolean values as parameters to URI Template expansion.
