@@ -94,6 +94,10 @@
 					clientRequest.abort();
 				};
 
+				if (request.secureOptions) {
+					options.secureOptions = request.secureOptions;
+				}
+
 				clientRequest = client.request(options, function (clientResponse) {
 					// Array of Buffers to collect response chunks
 					var buffers = [];
